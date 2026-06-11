@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-court: #0d2818;
+  --color-court-light: #14391f;
+  --color-court-mid: #1d4a2c;
+  --color-volt: #d4f24b;
+  --color-volt-dark: #b8d633;
+  --color-cream: #f7f5ef;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html, body { background: #0d2818; }
+* { -webkit-tap-highlight-color: transparent; }
+
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+@keyframes slideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.slide-up { animation: slideUp .25s ease-out; }
+
+::-webkit-scrollbar { display: none; }
