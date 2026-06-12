@@ -53,3 +53,19 @@ Implementación: dos proyectos en Vercel (o uno con monorepo). El subdominio
 `app` → cname de Vercel). El sitio de contenido puede ser estático (Astro o
 similar, ideal para blog + SEO). Actualizar Site URL/Redirects de Supabase a
 app.conectenis.com cuando se haga el cambio.
+
+## 6. Subdominio de pruebas: test.conectenis.com
+Dominio fijo para el entorno **Preview** de Vercel, en vez de las URLs
+aleatorias (`conectenis-git-rama-xxx.vercel.app`).
+
+- En Vercel: Settings → Environments → Preview → agregar dominio
+  `test.conectenis.com` (se puede asociar a una rama fija, ej. `test` o
+  `develop`).
+- En Namecheap: CNAME `test` → el valor que indique Vercel.
+- En Supabase: agregar `https://test.conectenis.com/**` a Redirect URLs para
+  que el login funcione también en pruebas.
+- Flujo: push a la rama de pruebas → se publica en test.conectenis.com →
+  validar → merge a `main` → producción en conectenis.com.
+
+Opcional: considerar un proyecto de Supabase separado para pruebas, y así no
+mezclar datos de test con usuarios reales.
