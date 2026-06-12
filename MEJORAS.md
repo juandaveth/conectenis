@@ -124,3 +124,34 @@ Los usuarios quieren saber más del rival antes de jugar:
 - **Disponibilidad visible en el perfil**: el PlayerSheet debe mostrar las
   próximas franjas publicadas del jugador — convierte el perfil en
   accionable ("está libre el jueves 7pm, le propongo ahí").
+
+---
+
+# Roadmap priorizado (2026-06-12)
+
+**Criterio:** validar el MVP y maximizar la densidad de jugadores
+publicando disponibilidad. Métrica norte: # de franjas publicadas por semana.
+Embudo: waitlist → cuentas → disponibilidades → partidos → marcadores.
+
+## Fase 1 — Quitar fricción y motivar publicación (ahora)
+1. **#1 Google OAuth** — login de 1 tap; ataca la fricción #1 reportada.
+2. **#4 Franjas de ancho completo en orden cronológico** — mejora directa
+   del flujo de publicar disponibilidad (la acción que queremos maximizar).
+3. **#10 Perfil enriquecido** (foto + disponibilidad visible) — feedback
+   directo de usuarios; genera confianza y hace accionable el calendario.
+
+## Fase 2 — Confianza en el nivel (cuando haya partidos fluyendo)
+4. **#8 Formulario estructurado de marcador**
+5. **#7 Confirmación bilateral** (sobre el marcador ya estructurado)
+
+## Fase 3 — Conversión y alcance
+6. **#2 Landing con tarjetas expandibles** — mejora conversión de waitlist.
+7. **#3 Multi-zona + canchas filtradas** — mejora relevancia del match.
+
+## Fase 4 — Escala (requiere masa crítica de calendarios)
+8. **#9 Matching automático estilo Focusmate** — la apuesta grande; solo
+   brilla con densidad suficiente de disponibilidades.
+9. **#5 app.conectenis.com / conectenis.com + blog** — crecimiento y SEO.
+
+**Transversal (cuando estorbe no tenerla):** #6 test.conectenis.com para
+probar sin riesgo en producción.
