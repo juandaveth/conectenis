@@ -101,3 +101,26 @@ Reemplazar el campo de texto libre por un formulario por sets:
 estructurado), luego #7 (confirmación bilateral) — confirmar sobre marcador
 validado es más sólido que sobre texto libre. El resto según prioridad de
 Juanda, con Google OAuth (#1) como la de mayor impacto en fricción.
+
+## 9. Matching automático estilo Focusmate
+No habrá matching manual por WhatsApp: las personas publican su calendario y
+el backend de Conectenis hace el match previo.
+
+- Criterios de cruce: franja horaria coincidente + categoría compatible
+  (misma o ±1, parametrizable) + zona o cancha en común.
+- A ambos jugadores les llega la propuesta con "Aceptar"; el partido se
+  confirma cuando ambos aceptan.
+- La reserva de la cancha sigue siendo manual: quien reserva lo indica al
+  confirmar (campo "yo reservo en X cancha").
+- Implementación: función Postgres ejecutada con pg_cron (o trigger al
+  publicar disponibilidad) que inserta propuestas en `matches`; la pestaña
+  "Jugar" evoluciona de buscador a bandeja de matches sugeridos.
+
+## 10. Perfil enriquecido (feedback de primeros usuarios)
+Los usuarios quieren saber más del rival antes de jugar:
+
+- **Foto de perfil real**: subida a Supabase Storage (bucket `avatars` con
+  RLS), reemplaza el avatar de iniciales.
+- **Disponibilidad visible en el perfil**: el PlayerSheet debe mostrar las
+  próximas franjas publicadas del jugador — convierte el perfil en
+  accionable ("está libre el jueves 7pm, le propongo ahí").
