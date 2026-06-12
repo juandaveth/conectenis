@@ -94,3 +94,10 @@ Reemplazar el campo de texto libre por un formulario por sets:
   Ponderar por margen ("margin of victory") queda como experimento futuro
   cuando haya datos reales; el valor inmediato del dato estructurado es
   estadísticas de perfil, desempates de ranking y datos limpios.
+
+---
+
+**Orden de implementación acordado (2026-06-12):** primero #8 (formulario
+estructurado), luego #7 (confirmación bilateral) — confirmar sobre marcador
+validado es más sólido que sobre texto libre. El resto según prioridad de
+Juanda, con Google OAuth (#1) como la de mayor impacto en fricción.
