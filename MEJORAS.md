@@ -69,3 +69,28 @@ aleatorias (`conectenis-git-rama-xxx.vercel.app`).
 
 Opcional: considerar un proyecto de Supabase separado para pruebas, y así no
 mezclar datos de test con usuarios reales.
+
+## 7. Confirmación bilateral del marcador
+El resultado no debe afectar el Elo hasta que ambos jugadores lo avalen
+(evita diferencias entre lo que registra el ganador y lo que acepta el perdedor).
+
+- Flujo: A registra → partido en estado `reported` → B ve el marcador exacto
+  y elige **Confirmar** o **Corregir** → al confirmar corre `record_result`
+  (Elo). Si B corrige, A confirma la versión de B.
+- Dos desacuerdos seguidos → estado `disputed`: no puntúa y queda marcado.
+- Timeout: si el otro jugador no responde en 72h, auto-confirmación (no
+  bloquear el Elo por inactividad).
+- DB: columnas `reported_score`, `reported_by`, nuevo estado en `matches`;
+  `record_result` solo ejecutable tras confirmación.
+
+## 8. Formulario estructurado de marcador
+Reemplazar el campo de texto libre por un formulario por sets:
+
+- Por cada set: games de cada jugador (ej. 6-4, 7-6) con validación de
+  marcadores válidos de tenis (6-x con diferencia 2, 7-5, 7-6).
+- El número de sets y el tie-break se infieren del marcador (7-6 ⇒ hubo
+  tie-break; opcional registrar el puntaje del TB).
+- Elo: por ahora el margen NO pondera (Elo clásico = solo gana/pierde).
+  Ponderar por margen ("margin of victory") queda como experimento futuro
+  cuando haya datos reales; el valor inmediato del dato estructurado es
+  estadísticas de perfil, desempates de ranking y datos limpios.
