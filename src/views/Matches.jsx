@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { fmtDate, fmtTime } from '../lib/constants'
-import { Avatar, Button, Sheet, Spinner, Field, inputCls, Star } from '../components/ui'
+import { Avatar, Button, Sheet, Spinner, Field, inputCls, Star, InviteButton } from '../components/ui'
 import { useApp } from '../App'
 
 export default function Matches() {
@@ -54,7 +54,10 @@ export default function Matches() {
         <div className="text-center py-12">
           <p className="text-4xl mb-3">🎾</p>
           <p className="text-cream/60 text-sm">Aún no tienes partidos.</p>
-          <p className="text-cream/35 text-xs mt-1">Busca un rival en la pestaña Jugar.</p>
+          <p className="text-cream/35 text-xs mt-1">Busca un rival en la pestaña Jugar, o invita a jugadores que estén cerca a tu cancha.</p>
+          <div className="mt-4 flex justify-center">
+            <InviteButton>Invitar a un tenista 🎾</InviteButton>
+          </div>
         </div>
       )}
 

@@ -1,5 +1,22 @@
 # CLAUDE.md — Contexto del proyecto Conectenis
 
+## Objetivo
+El norte de Conectenis es que **se concreten más partidos de tenis parejos** en
+Medellín. Resuelve un dolor propio de Juanda: no conocer gente de su mismo nivel
+para jugar. Es el lente para decir sí/no a cada idea — si algo no acerca a que
+se juegue un partido, no es prioridad ahora.
+
+- **Hipótesis a validar:** lo primero a resolver es el **nivel** (saber quién
+  juega parejo a ti); resuelto eso, cancha y horario se vuelven manejables. Hay
+  que validarlo con datos, no darlo por hecho.
+- **Alcance inicial:** **una sola zona/club** con masa crítica — no abrir toda
+  la ciudad todavía (concentrar densidad antes que dispersarla).
+- **Señal de éxito:** que **otros** tenistas (no solo Juanda) agenden y jueguen
+  entre ellos, no que solo se registren.
+
+Orden de prioridades de producto en `PRIORIDADES.md`; backlog detallado en
+`MEJORAS.md`.
+
 ## Qué es
 MVP en producción para conectar tenistas en Medellín por nivel de juego,
 disponibilidad horaria y cercanía. Dueño: Juan David (Juanda), no developer —

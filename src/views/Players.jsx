@@ -59,7 +59,7 @@ export default function Players() {
               <button onClick={() => setSel(p)} className="flex items-center gap-3 flex-1 min-w-0 text-left">
                 <Avatar name={p.name} size={46} />
                 <div className="flex-1 min-w-0">
-                  <p className="text-cream font-semibold text-sm truncate">{p.name} <span className="text-cream/35 font-normal">· {p.age}</span></p>
+                  <p className="text-cream font-semibold text-sm truncate">{p.name}{p.age ? <span className="text-cream/35 font-normal"> · {p.age}</span> : null}</p>
                   <div className="mt-0.5"><CategoryBadge profile={p} /></div>
                   <p className="text-cream/40 text-[11px] mt-0.5">{p.zone}{p.zone === profile.zone ? ' · 📍 tu zona' : ''}</p>
                 </div>

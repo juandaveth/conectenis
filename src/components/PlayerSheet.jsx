@@ -18,7 +18,7 @@ export default function PlayerSheet({ player, open, onClose, footer }) {
             <h2 className="text-cream font-extrabold text-xl truncate">{player.name}</h2>
             <Star filled={favorites.has(player.id)} onClick={() => toggleFavorite(player.id)} />
           </div>
-          <p className="text-cream/50 text-sm">{player.age} años · {player.zone}</p>
+          <p className="text-cream/50 text-sm">{player.age ? `${player.age} años · ` : ''}{player.zone}</p>
           <div className="mt-1.5"><CategoryBadge profile={player} detailed /></div>
         </div>
       </div>

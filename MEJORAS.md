@@ -2,6 +2,11 @@
 
 _Notas del testing con usuarios reales — 2026-06-11_
 
+> **Orden según el objetivo en `PRIORIDADES.md`.** Este archivo es el backlog
+> detallado; el orden en que conviene atacarlo (y qué diferir) está allí. Ojo:
+> la #3 (multi-zona) se difiere por ahora porque contradice el alcance de
+> "una sola zona".
+
 ## 1. Login con Google (OAuth)
 **Problema detectado:** con el enlace mágico, cada vez que el usuario cierra sesión
 hay que enviar un nuevo correo. Fricción alta.

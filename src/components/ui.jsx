@@ -1,4 +1,4 @@
-import { CATEGORIES, validatedCategory } from '../lib/constants'
+import { CATEGORIES, validatedCategory, inviteWhatsappUrl } from '../lib/constants'
 
 export function Avatar({ name, size = 44, className = '' }) {
   const initials = (name || '?').split(' ').map(w => w[0]).slice(0, 2).join('').toUpperCase()
@@ -42,6 +42,20 @@ export function Button({ children, variant = 'primary', className = '', ...props
     <button className={`rounded-2xl px-4 py-3 text-sm transition-colors ${styles[variant]} ${className}`} {...props}>
       {children}
     </button>
+  )
+}
+
+// Botón que abre WhatsApp con un mensaje de invitación prellenado (P1).
+export function InviteButton({ children = 'Invitar a un tenista 🎾', variant = 'primary', className = '' }) {
+  const styles = {
+    primary: 'bg-volt text-court font-bold active:bg-volt-dark',
+    ghost: 'bg-white/10 text-cream active:bg-white/20',
+  }
+  return (
+    <a href={inviteWhatsappUrl()} target="_blank" rel="noopener noreferrer"
+      className={`rounded-2xl px-4 py-3 text-sm transition-colors flex items-center justify-center gap-2 ${styles[variant]} ${className}`}>
+      {children}
+    </a>
   )
 }
 

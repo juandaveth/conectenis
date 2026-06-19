@@ -26,13 +26,16 @@ export function validatedCategory(profile) {
 }
 
 export const ZONES = [
-  'Laureles–Estadio', 'El Poblado', 'Belén', 'Envigado', 'Sabaneta',
+  'Laureles–Estadio', 'El Poblado', 'Belén', 'Guayabal', 'Envigado', 'Sabaneta',
   'Itagüí', 'Centro', 'Robledo–Occidente', 'Bello–Norte', 'Calasanz–La América',
 ]
 
+// `lat: true` marca las sedes de la Liga Antioqueña de Tenis. Foco inicial (P1):
+// sembrar masa crítica en estas sedes para que sí haya con quién jugar.
 export const COURTS = [
-  { name: 'U.D. Atanasio Girardot', zone: 'Laureles–Estadio' },
-  { name: 'U.D. de Belén Andrés Escobar', zone: 'Belén' },
+  { name: 'U.D. Atanasio Girardot', zone: 'Laureles–Estadio', lat: true },
+  { name: 'U.D. Belén', zone: 'Belén', lat: true },
+  { name: 'U.D. María Luisa Calle', zone: 'Guayabal', lat: true },
   { name: 'Parque Juanes de la Paz', zone: 'Bello–Norte' },
   { name: 'Club El Rodeo', zone: 'Belén' },
   { name: 'Club Campestre', zone: 'El Poblado' },
@@ -42,6 +45,13 @@ export const COURTS = [
   { name: 'Ditaires Itagüí', zone: 'Itagüí' },
   { name: 'Club Deportivo Calasanz', zone: 'Calasanz–La América' },
 ]
+
+// Invitación por WhatsApp para sembrar tenistas (P1). Apunta a producción.
+export const APP_URL = 'https://conectenis.com'
+export function inviteWhatsappUrl() {
+  const msg = `¡Juguemos tenis! 🎾 Me uní a Conectenis para encontrar rivales de mi mismo nivel en Medellín. Únete y cuadramos partido: ${APP_URL}`
+  return `https://wa.me/?text=${encodeURIComponent(msg)}`
+}
 
 export const HOURS = Array.from({ length: 17 }, (_, i) => i + 5) // 5:00 → 21:00
 

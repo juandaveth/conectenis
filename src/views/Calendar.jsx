@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, useCallback } from 'react'
 import { supabase } from '../lib/supabase'
 import { CATEGORIES, CATEGORY_ORDER, HOURS, DAYS_ES, MONTHS_ES, fmtTime, validatedCategory } from '../lib/constants'
-import { Avatar, CategoryBadge, Button, Sheet, Spinner, Field } from '../components/ui'
+import { Avatar, CategoryBadge, Button, Sheet, Spinner, Field, InviteButton } from '../components/ui'
 import PlayerSheet from '../components/PlayerSheet'
 import { useApp } from '../App'
 
@@ -149,8 +149,11 @@ export default function Calendar() {
             <div className="text-center py-12">
               <p className="text-4xl mb-3">🦗</p>
               <p className="text-cream/60 text-sm font-semibold">Nadie disponible este día{catFilter || onlyFavs || onlyNear ? ' con esos filtros' : ''}</p>
-              <p className="text-cream/35 text-xs mt-1.5">Publica tu disponibilidad y deja que te encuentren.</p>
-              <Button variant="ghost" className="mt-4" onClick={() => setMode('mine')}>Publicar mi disponibilidad</Button>
+              <p className="text-cream/35 text-xs mt-1.5">Publica tu disponibilidad y deja que te encuentren — o invita a jugadores que estén cerca a tu cancha.</p>
+              <div className="mt-4 flex flex-col items-center gap-2">
+                <Button variant="ghost" onClick={() => setMode('mine')}>Publicar mi disponibilidad</Button>
+                <InviteButton variant="ghost">Invitar a un tenista 🎾</InviteButton>
+              </div>
             </div>
           ) : (
             <div className="space-y-2.5">

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { CATEGORIES, CATEGORY_ORDER, ZONES, COURTS, validatedCategory, MIN_MATCHES_TO_VALIDATE } from '../lib/constants'
-import { Avatar, CategoryBadge, Button, Field, inputCls, Card } from '../components/ui'
+import { Avatar, CategoryBadge, Button, Field, inputCls, Card, InviteButton } from '../components/ui'
 import { useApp } from '../App'
 
 export default function Profile() {
@@ -69,7 +69,7 @@ export default function Profile() {
       <div className="flex flex-col items-center text-center mb-5">
         <Avatar name={profile.name} size={84} className="mb-3" />
         <h1 className="text-cream text-2xl font-extrabold">{profile.name}</h1>
-        <p className="text-cream/50 text-sm">{profile.age} años · {profile.zone}</p>
+        <p className="text-cream/50 text-sm">{profile.age ? `${profile.age} años · ` : ''}{profile.zone}</p>
         <div className="mt-2"><CategoryBadge profile={profile} detailed /></div>
       </div>
 
@@ -98,6 +98,7 @@ export default function Profile() {
 
       {profile.bio && <Card className="mb-4"><p className="text-cream/70 text-sm">"{profile.bio}"</p></Card>}
 
+      <InviteButton className="w-full mb-2">Invitar tenistas 🎾</InviteButton>
       <Button variant="ghost" className="w-full mb-2" onClick={() => { setF(profile); setEditing(true) }}>Editar perfil</Button>
       <Button variant="danger" className="w-full" onClick={() => supabase.auth.signOut()}>Cerrar sesión</Button>
     </div>
